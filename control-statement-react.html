@@ -1,0 +1,28 @@
+<div id="app">
+</div>
+
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script type="text/babel">
+  const todos = [
+    {id: 1, text: 'item a'},
+    {id: 2, text: 'item b'},
+    {id: 3, text: 'item c'},
+    {id: 4, text: 'item d'},
+    {id: 5, text: 'item e', notice: true},
+  ]
+
+  ReactDOM.render(
+    <ul>
+      {
+        todos.map((item)=>(
+          <li>
+            {item.id}: {item.text} {item.notice ? "!!!": null}
+          </li>
+        ))
+      }
+    </ul>,
+    document.getElementById('app')
+  );
+</script>
