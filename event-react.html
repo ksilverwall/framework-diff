@@ -1,0 +1,33 @@
+<div id="app">
+</div>
+
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script type="text/babel">
+  class MessageComponent extends React.Component {
+    constructor(props) {
+      super(props)
+      this.state = {
+        message: 'default-message'
+      }
+    }
+    render() {
+      return (
+        <React.Fragment>
+          <p>{this.state.message}</p>
+          <input onChange={(event)=>this.setState({message: event.target.value})} value={this.state.message}/>
+          <button onClick={this.showAlert}>showAlert</button>
+        </React.Fragment>
+      )
+    }
+    showAlert() {
+      alert("Hello")
+    }
+  }
+
+  ReactDOM.render(
+    <MessageComponent/>,
+    document.getElementById('app')
+  );
+</script>

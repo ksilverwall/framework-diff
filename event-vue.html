@@ -1,0 +1,18 @@
+<div id="app">
+  <p>{{ message }}</p>
+  <input v-model="message">
+  <button v-on:click="showAlert">showAlert</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      message: "default-message"
+    },
+    methods: {
+      showAlert: () => alert("Hello!")
+    }
+  })
+</script>
